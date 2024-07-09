@@ -5,16 +5,16 @@
     <div class="col-3">Something Else</div>
   </div>
   <div class="body">
-    <form>
+    <form #f="ngForm" (ngSubmit)="submit(f)">
       <div class="row">
         <div class="col-3">
           <label>Name*</label>
         </div>
         <div class="col-3">
-          <input type="text" placeholder="First Name">
+          <input type="text" ngModel name="firstName" #firstName="ngModel" placeholder="First Name" required>
         </div>
         <div class="col-3">
-          <input type="text" placeholder="Last Name">
+          <input type="text" ngModel name="lastName" #lastName="ngModel" placeholder="Last Name">
         </div>
       </div>
 
@@ -23,7 +23,7 @@
           <label>Title*</label>
         </div>
         <div class="col-2">
-          <input type="text" placeholder="Role/Position">
+          <input type="text" ngModel name="title" #title="ngModel" placeholder="Role/Position">
         </div>
       </div>
 
@@ -32,7 +32,7 @@
           <label>Company*</label>
         </div>
         <div class="col-2">
-          <input type="text" placeholder="Company Name">
+          <input type="text" ngModel name="company" #company="ngModel" placeholder="Company Name">
         </div>
       </div>
 
@@ -41,7 +41,7 @@
           <label>Email*</label>
         </div>
         <div class="col-2">
-          <input type="text" placeholder="example@gmail.com">
+          <input type="text" ngModel name="mail" #mail="ngModel" placeholder="example@gmail.com">
         </div>
       </div>
 
@@ -50,7 +50,7 @@
           <label>Phone*</label>
         </div>
         <div class="col-2">
-          <input type="text" placeholder="(+91)-XXXX-XXXX-XX">
+          <input type="text" ngModel name="phone" #phone="ngModel" placeholder="(+91)-XXXX-XXXX-XX">
         </div>
       </div>
 
@@ -59,13 +59,13 @@
           <label>Message</label>
         </div>
         <div class="col-2">
-          <textarea placeholder="Message"></textarea>
+          <textarea ngModel name="message" #message="ngModel" placeholder="Message"></textarea>
         </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <button>Get in touch</button>
+          <button [disabled]="!f.valid">Get in touch</button>
         </div>
       </div>
 

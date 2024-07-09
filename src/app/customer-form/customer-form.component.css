@@ -1,6 +1,5 @@
 .container {
   width: 600px;
-
 }
 
 .container .heading {
@@ -70,6 +69,10 @@ textarea {
 .row .col-2:nth-of-type(2) input,
 .row .col-2:nth-of-type(2) textarea {
   width: 100%;
+}
+
+.row .col-2:nth-of-type(2) textarea {
+  height: 100px;
 }
 
 .row:last-child {
